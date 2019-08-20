@@ -1,0 +1,23 @@
+<%= navback "" %>
+
+<div class="page-content">
+  <div class="block">
+    <div class="card demo-facebook-card">
+      <div class="card-header">
+        <!-- <div class="demo-facebook-avatar"><img src="http://lorempixel.com/68/68/people/1/" width="34" height="34"/></div> -->
+        <div class="demo-facebook-name" style="margin-left:0px;"><%= @post.title %></div>
+        <div class="demo-facebook-date" style="margin-left:0px;"><%= @post.posted_at.strftime("%Y, %m월 %d일") %></div>
+      </div>
+      <div class="card-content card-content-padding">
+        <p><%= simple_format @post.body %></p>
+        <% if @post.image.present? %>
+          <%= image_tag "#{@post.image}" %>
+        <% else %>
+          <%= image_tag "https://placehold.it/300x300" %>
+        <% end %>
+        <%= link_to '수정', "/diary/edit_post/#{@post.id}" %>
+        <%= link_to '삭제', "/diary/destroy_post/#{@post.id}", data: {confirm: "정말 삭제하시겠습니까?"}, method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>

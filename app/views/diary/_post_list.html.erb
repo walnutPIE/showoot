@@ -1,0 +1,16 @@
+<ul>
+  <% target_posts.each do |post| %>
+    <li>
+      <a href="/diary/show_post/<%= post.id %>" class="item-link item-content">
+        <div class="item-inner">
+          <div class="item-title-row">
+            <div class="item-title"><%= post.title %></div>
+            <div class="item-after"></div>
+          </div>
+          <div class="item-subtitle post-date"><%= post.posted_at.strftime("%Y년 %m월 %d일") %></div>
+          <div class="item-text"><%= post.body %></div>
+        </div>
+      </a>
+    </li>
+  <% end %>
+</ul>

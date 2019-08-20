@@ -1,0 +1,52 @@
+<div class="navbar no-shadow">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="link back">
+        <i class="icon icon-back"></i>
+        <span class="ios-only">Back</span>
+      </a>
+    </div>
+    <div class="title">마이페이지</div>
+  </div>
+</div>
+<div class="toolbar tabbar">
+  <div class="toolbar-inner">
+    <!-- Links have "tab-link" class instead of just "link" to switch tabs -->
+    <a href="#tab-1" class="tab-link tab-link-active">Closet</a>
+    <a href="#tab-2" class="tab-link">타임라인</a>
+  </div>
+</div>
+<!-- Tabs -->
+<div class="tabs">
+  <div class="page-content tab tab-active" id="tab-1">
+    <div class="block">
+      <div class="row">
+        <% @my_posts.each do |p| %>
+          <div class="col-50" id="image-container">
+            <%= link_to show_post_path(p.id) do %>
+              <% if p.image.present? %>
+                <%= image_tag "#{p.image}" %>
+              <% else %>
+                <%= image_tag "https://placehold.it/300x300" %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- Second tab -->
+  <div class="page-content infinite-scroll-content tab" id="tab-2">
+    <div class="block card-container">
+      <% if @others_posts.count == 0 %>
+        <div class="block">
+          <p>다른 사람이 올린 글이 없습니다</p>
+        </div>
+      <% else %>
+        <% @others_posts.each do |p| %>
+          <%= render 'card_item' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

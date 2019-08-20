@@ -1,0 +1,22 @@
+<ul>
+    <li>
+      <div class="block">
+          <div class="row">
+            <% if @target_posts.count == 0 %>
+              <p>등록된 다이어리가 없습니다</p>
+            <% else %>
+              <% @target_posts.each do |p| %>
+                <div class="col-50" id="image-container">
+                  <%= link_to show_post_path(p.id) do %>
+                    <% if p.image.present? %>
+                      <%= image_tag "#{p.image}" %>
+                    <% else %>
+                      <%= image_tag "https://placehold.it/300x300" %>
+                    <% end %>
+                  <% end %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+    </li>
+</ul>

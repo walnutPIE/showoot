@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weather: 
+  event: 1
+  preference: 1
+
+two:
+  weather: 
+  event: 1
+  preference: 1

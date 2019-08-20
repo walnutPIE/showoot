@@ -1,0 +1,75 @@
+<div class="block">
+  <div class="block-title"><%= picked_date.strftime("%Y년 %m월 %d일") %> OOTD 다이어리 작성</div>
+  <div class="list inline-labels no-hairlines-md">
+    <%= form_for @post, url: '/diary/create_post' do |f| %>
+      <%= f.hidden_field :user_id,value: current_user.id %>
+      <%= f.hidden_field :posted_at,value: picked_date %>
+      <% if @post.errors.any? %>
+        <div id="errorExplanation">
+          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+          <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <ul>
+        <li class="item-content item-input">
+          <div class="row" style="width:100%;">
+            <div class="item-inner col">
+              <div class="item-title item-label" style="font-size:0.7em;color:grey;">공개범위</div>
+              <div class="item-input-wrap">
+                <%= f.select(:open_range, options_for_select([['전체공개','전체공개'], ['나만보기','나만보기']]), value:'전체공개' ) %>
+              </div>
+            </div>
+            <div class="item-inner col">
+              <div class="item-title item-label" style="font-size:0.7em;color:grey;">이벤트</div>
+              <div class="item-input-wrap">
+                <%= select_tag(:event, options_for_select([['비즈니스','비즈니스'], ['데이트','데이트'], ['친구약속','친구약속'], ['데일리','데일리']]), value:'비즈니스' ) %>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-input-wrap">
+              <img id="image_upload" src="#" />
+              <!-- <input type='file' onchange="readURL(this);" /> -->
+              <%= f.file_field :image %> <!--name => post[image] -->
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-input-wrap">
+              <%= f.text_field :title, placeholder:"제목" %>
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-input-wrap">
+              <%= f.text_area :body, placeholder:"내용" %>
+              <span class="input-clear-button"></span>
+            </div>
+          </div>
+        </li>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-label">선호 점수</div>
+            <div class="item-input-wrap">
+              <div class="range-slider range-slider-init" data-label="true">
+                <input type="range" name="preference" value="5" min="1" max="5" step="1">
+              </div>
+            </div>
+          </div>
+        </li>
+        <div class="block">
+          <%= f.submit class:"button button-fill color-blue" %>
+        </div>
+      </ul>
+    <% end %>
+  </div>
+</div>

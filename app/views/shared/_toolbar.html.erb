@@ -1,0 +1,7 @@
+<div class="toolbar tabbar no-shadow <%= bottom ? "toolbar-bottom-md" : ""  %>">
+  <div class="toolbar-inner">
+    <% menu_list.each_with_index do |menu_title, index| %>
+      <a href="#" class="tab-link <%= index == 0 ? "tab-link-active" : "" %>"><%= menu_title %></a>
+    <% end %>
+  </div>
+</div>

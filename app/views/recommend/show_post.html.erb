@@ -1,0 +1,11 @@
+<%= navback @post.title %>
+<div class="page-content">
+  <div class="block-title">
+    <%= @post.title %>
+  </div>
+  <div class="block">
+    <%= simple_format @post.body %>
+  </div>
+  <%= link_to '수정', "/diary/edit_post/#{@post.id}" %>
+  <%= link_to '삭제', "/diary/destroy_post/#{@post.id}", data: {confirm: "정말 삭제하시겠습니까?"}, method: :delete %>
+</div>

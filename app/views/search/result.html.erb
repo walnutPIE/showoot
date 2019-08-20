@@ -1,0 +1,24 @@
+<div class="navbar no-shadow">
+  <div class="navbar-inner sliding">
+    <div class="left">
+      <a href="#" class="link back">
+        <i class="icon icon-back"></i>
+        <span class="ios-only">Back</span>
+      </a>
+    </div>
+    <div class="title">검색결과</div>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="block">
+    <div class="block-title">포스트</div>
+    <div class="list media-list" id="post_div">
+      <% if @target_posts.count < 1 %>
+        <p>검색된 결과가 없습니다</p>
+      <% else %>
+        <%= render '/diary/post_list', target_posts: @target_posts %>
+      <% end %>
+    </div>
+  </div>
+</div>

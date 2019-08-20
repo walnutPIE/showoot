@@ -1,0 +1,26 @@
+<% posts.each do |post| %>
+  <div class="card demo-facebook-card">
+    <div class="card-header">
+      <!-- <div class="demo-facebook-avatar"><img src="http://lorempixel.com/68/68/people/1/" width="34" height="34"/></div> -->
+      <div class="demo-facebook-name" style="margin-left:0px;"><%= post.title %></div>
+      <div class="demo-facebook-date" style="margin-left:0px;"><%= post.posted_at.strftime("%Y, %m월 %d일") %></div>
+      <div class="demo-facebook-date" style="margin-left:0px;"><%= User.find(post.user_id).email %></div>
+    </div>
+    <div class="card-content card-content-padding">
+      <p><%= simple_format post.body %></p>
+      <% if post.image.present? %>
+        <%= image_tag "#{post.image}" %>
+      <% else %>
+        <%= image_tag "https://placehold.it/300x300" %>
+      <% end %>
+      <p class="likes">좋아요 <%= UserPost.where(post_id: post.id).count %></p>
+    </div>
+    <div class="card-footer">
+      <% if UserPost.where(post_id: post.id, user_id: current_user.id).count > 0 %>
+        <%= link_to "좋아요 취소", like_lookbook_path(post.id), remote: true %>
+      <% else %>
+        <%= link_to "좋아요", like_lookbook_path(post.id), remote: true %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

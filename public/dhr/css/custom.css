@@ -1,0 +1,244 @@
+/* mainColor */
+/*
+#D2EDE5
+#BCE8D9
+#9FE2CA
+#9DCEBC
+
+#FFBC50
+#F9AB3A
+#F49019
+#E29823
+
+#FCFCFC
+#EFEFEF
+#D6D6D6
+#7F8080
+#3F4040
+#000201
+*/
+
+
+/* COMMON */
+ol,ul,li {margin:0;padding:0;list-style:none}
+h1, h2 {color:#222}
+h3, h4 {color:#555}
+h5, h6 {color:#777}
+.ios body {color:#444}
+input::placeholder {font-weight:normal !important}
+input:focus {border-color:#27884F !important}
+.ios .button {border-color:#27884F;color:#444}
+.errorExplanation h5 {margin-bottom:4px;font-weight:normal;color:#ee350f;}
+.ios .button.button-fill,
+.ios .button.button-fill-ios {border-color:#27884F;background:#27884F !important;color:#fff}
+.button-purple {border-color:#27884F !important;background:#27884F !important;color:#fff}
+.ios .button.bg-2nd {border-color:#27884F;background-color:transparent;color:#444}
+.ios a {color:#444}
+.navbar a,
+.ios .navbar .title,
+.ios .tabbar a.tab-link-active,
+.ios .tabbar-labels a.tab-link-active {color:#fff}
+.navbar-inner {border-bottom:1px solid #27884F;background:#27884F !important}
+.navbar-inner .txt {margin-left:2px;vertical-align:middle}
+.ios .navbar .right {margin-left:0;padding-right:2px}
+.ios .navbar .f7-icons, .ios .toolbar .f7-icons {font-weight:bold;padding-right:2px}
+.accordion-item-opened .accordion-item-content {border-top:1px dashed #ccc}
+.navbar .right .btn_tel {display:block;width:40px !important;height:40px !important;border-radius: 8px;background-color:#db4437;text-align:center;line-height:40px !important;-webkit-box-shadow: 0 2px 4px rgba(0,0,0,.4);box-shadow: 0 2px 4px rgba(0,0,0,.4);}
+.screen_out {overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px}
+.ios .navbar .left .icon {font-size:34px;}
+/* botton */
+.ios .button {border-radius:30px}
+.ios .account-btn {font-weight:bold}
+.ios .button-fill.btn_kakao,
+.ios .button-fill.btn_facebook,
+.ios .button-fill.btn_naver {position:relative;border-color:transparent}
+.ios .button-fill.btn_kakao {background-color:#FFEB00 !important}
+.ios .button-fill.btn_facebook {background-color:#3B5999 !important}
+.ios .button-fill.btn_naver {background-color:#1DC800 !important}
+.ios .button-fill.btn_kakao a {color:#3B1E1E}
+.ios .button-fill.btn_facebook a,
+.ios .button-fill.btn_naver a {color:#fff}
+.btn_kakao:before,
+.btn_facebook:before,
+.btn_naver:before {content:'';display:block;position:absolute;top:0;left:0;width:44px;height:44px;padding:0 5px;background:center no-repeat;background-size:34px auto}
+.btn_kakao:before {background-color:#FFEB00;background-image:url(/dhr/img/ico_kakao.png)}
+.btn_facebook:before {background-color:#3B5999;background-image:url(/dhr/img/ico_facebook.png)}
+.btn_naver:before {background-color:#1DC800;background-image:url(/dhr/img/ico_naver.png)}
+.provider-btn .button {margin-top:6px}
+.provider-btn .button:first-child {margin-top:0}
+.provider-btn .button a {font-size:14px}
+.accordion-item .block {padding:15px;}
+.ios .swiper-pagination-bullet-active {background:#27884F;}
+
+/* tab */
+.ios .tabbar a.tab-link-active,
+.ios .tabbar-labels a.tab-link-active {font-weight:bold;color:#444;}
+
+
+/* input */
+.account-content .input-list > input[type=button] {height:45px;border:0 none;background-color:#999;line-height:43px;color:#fff}
+.ios .checkbox input[type=checkbox]:checked~i,
+.ios label.item-checkbox input[type=checkbox]:checked~.icon-checkbox {background:#27884F}
+
+/* LAYOUT */
+.ios .block {color:#555;}
+.block_line {margin:30px auto;width:50px;height:1px;background-color:#ddd}
+.margin-top-6 {margin-top:6px !important}
+
+.ios .row .col:nth-last-child(2),
+.ios .row .col:nth-last-child(2)~.col {width:calc((100% - 8px*1)/ 2)}
+.ios .row .col:nth-last-child(3),
+.ios .row .col:nth-last-child(3)~.col {width:calc((100% - 8px*2)/ 3)}
+.ios .row .col:nth-last-child(4),
+.ios .row .col:nth-last-child(4)~.col {width:calc((100% - 8px*3)/ 4)}
+
+/* media-list */
+
+.list .item-title { white-space: normal;}
+.list.user-list li.swipeout {box-shadow:none}
+.list.user-list li.swipeout .item-after {font-size:13px}
+.ios .media-list .item-link .item-title-row,
+.ios li.media-item .item-link .item-title-row {padding-right:15px}
+.ios .media-list .item-title,
+.ios li.media-item .item-title {font-size:16px}
+.ios .user-list .user-role {font-size:14px !important}
+.ios .list .item-after {color:#666}
+.text-info {color:#666 !important}
+
+/* swiper */
+.demo-swiper {border-bottom:1px solid #ddd;background-color:#f1f1f1}
+.demo-swiper .swiper-slide {border:0 none}
+.dash-widget {display:table;width:100%;margin-bottom:0;border:0 none;border-radius:0;background-color:#f1f1f1;box-shadow:none}
+.dash-widget-info {display:table-cell;vertical-align:middle}
+.demo-swiper .button.external {display:inline-block;padding:0 20px;font-weight:bold;font-size:14px}
+
+/* sheet-modal */
+.with-modal-sheet .view:after {display:block;position:fixed;top:0;bottom:0;right:0;left:0;z-index:1;width:100%;height:100%;background:#000;opacity:.5;content:''}
+.ios .sheet-modal .toolbar {background:#EFEFEF}
+.ios .sheet-modal.smart-select-sheet .list {margin:0}
+
+/* toolbar */
+.ios .toolbar-bottom-md a.tab-link-active:before {content:'';display:block;position:absolute;top:0;width:30%;height:3px;background:#27884F}
+.tabbar.toolbar-border a.tab-link-active {border-color:#27884F}
+.ios .toolbar a.sheet-close {height:34px;padding:0 20px;border-radius:30px;background-color:#555;line-height:34px;color:#fff}
+
+/* LOGO */
+.ios .block_logo {margin-top:0}
+
+/* HEADER */
+.ios .navbar .title {font-size:20px}
+.ios .navbar-inner {padding:0 15px}
+
+/* CONTENT */
+
+/* home-index */
+.demo-swiper {margin-bottom:0}
+.page[data-name=home-index] .link_more {display:inline-block;margin:0 auto;color:#27884F;vertical-align:top}
+.page[data-name=home-index] .link_more .txt {display:inline-block;height:24px;line-height:22px;vertical-align:top}
+.page[data-name=home-index] .link_more i {margin-left:0;vertical-align:top}
+.page[data-name=home-index] .account-center {background-color:#fcfcfc}
+.page[data-name=home-index] h1.logo {width:90px;margin:0 auto;}
+.page[data-name=home-index] h2.tit {font-size:2em;color:#555;text-align:center;}
+.page[data-name=home-index] .block p {margin:1em 0}
+.page[data-name=home-index] .swiper-container h2 {margin-bottom:20px}
+.page[data-name=home-index] .swiper-container .make-alert.button {display:inline-block;height:38px;padding:0 30px;font-weight:bold;font-size:14px;line-height:36px}
+/* home-index > event */
+.page[data-name=home-index] #tab-main-3 .block .no_data {padding-top:100px}
+/* home-index > 마이페이지 */
+.experience-list > li {padding-top:10px;padding-left:15px;border-top:1px solid #eee}
+.experience-list > li:first-child {padding-top:0;border-top:0 none}
+.experience-list > li:first-child .experience-user {top:8px}
+.experience-list > li .time {padding-top:2px;font-size:14px;color:#666}
+.experience-list > li .experience-user {top:18px}
+.experience-list > li .experience-content {margin-left:5px;padding-right:15px}
+.experience-list > li .experience-content .timeline-content span.name {font-size:16px;color:#333}
+#service-use-list .block-strong {margin:0;padding-right:0}
+#service-use-list .block-strong:before,
+#service-use-list .block-strong:after {height:0}
+
+
+/* sessions-index */
+.page[data-name=seniors-index] .no_data {padding:50px 0}
+
+/* intro */
+.page[data-name=home-index] .page-content.page_intro {position:fixed;top:0;left:0;bottom:0;right:0;height:auto;}
+.page[data-name=home-index] .page_intro .swiper-container {position:fixed;top:0;left:0;bottom:0;right:0;height:auto}
+
+/* seniors-new */
+.ios .list ul:before,
+.ios .list ul:after,
+.ios .list .item-inner:after {background-color:#ccc}
+.page[data-name=sessions-new] h3.logo {width:90px;margin:0 auto 30px}
+.page[data-name=sessions-new] .input-list {margin-bottom:8px}
+.page[data-name=sessions-new] .input_btn {padding-top:40px}
+.page[data-name=seniors-new] .account-content {padding:15px 0}
+.page[data-name=seniors-new] .account-btn {margin-top:20px;color:#000201}
+.ios .page[data-name=seniors-new] .block {margin:0;padding:15px}
+.ios .page[data-name=seniors-new] .input-list {margin-bottom:8px}
+.ios .page[data-name=seniors-new] .list {margin:0}
+.ios .page[data-name=seniors-new] .list .accordion-item-content .item-content {padding-left:5px}
+.ios .list .accordion-item-opened > .item-link .item-inner:after {top:auto;bottom:0;background-color:transparent}
+.ios .list .accordion-item-opened .accordion-item-content:after {content:'';display:block;position:absolute;bottom:0;left:0;z-index:15;width:100%;height:1px;background-color:#ccc;-webkit-transform-origin:50% 100%;transform-origin:50% 100%;transform:scaleY(.5);-webkit-transform:scaleY(.5)}
+.ios .page[data-name=seniors-new] .account-content .input-list > input[type=button] {height:38px;line-height:38px}
+
+/* registrations-new */
+.input-list em {display:block;font-style:normal;font-size:13px;text-align:right;color:#666}
+
+/* hospital_steps-show, reservations-index, diet_steps-show, medicine_steps-show */
+.account-center {position:relative}
+#daum_wrap {position:absolute;top:15px;right:15px;bottom:15px;left:15px;z-index:10;height:470px !important;margin-bottom:15px;border:2px solid #e7e7e7;border-radius:5px;box-sizing:border-box}
+#daum_wrap:after {display:block;position:fixed;top:0;bottom:0;right:0;left:0;z-index:-1;background:#000;opacity:.5;content:''}
+#daum_wrap #__daum__layer_1 {overflow:hidden !important}
+.mg-med .card {margin:10px 0 0;border-radius:4px}
+.mg-med .card-header {background-color:#27884F;color:#fff}
+
+.page[data-name=hospital_steps-show] .input-list,
+.page[data-name=medicine_steps-show] .input-list,
+.page[data-name=disease_steps-show] .input-list,
+.page[data-name=diet_steps-show] .input-list:last-child,
+.page[data-name=healthcare_steps-show] .input-list {margin-bottom:6px}
+.page[data-name=hospital_steps-show] form > .input-list:last-child,
+.page[data-name=medicine_steps-show] form > .input-list:last-child,
+.page[data-name=disease_steps-show] form > .input-list:last-child,
+.page[data-name=diet_steps-show] form > .input-list:last-child,
+.page[data-name=healthcare_steps-show] form > .input-list:last-child {margin-top:30px}
+
+/* 예약 */
+.page[data-name=reservations-index] .widget {min-height:128px;}
+.reservation-button .reservation-item::before {content:'';position: absolute;top:0;left:0;width:calc((100% - 5px));min-height:122px;border:4px solid #ee350f;border-radius:4px; }
+.fa-users {font-size:24px;}
+.before-circle {background-color:#27884F}
+
+/* 신청하기 */
+.page[data-name=ballader_applies-show] .account-page {display:block;}
+.page[data-name=ballader_applies-show] .account-inner {display:block;}
+.page[data-name=ballader_applies-show] .account-center {display:block;height:100%;}
+.page[data-name=ballader_applies-show] .account-content {position:absolute;top: 0;bottom: 0;left:0;right:0;margin: auto;width:100%;height:50%;}
+
+/* 메인 슬라이드 */
+.page[data-name=home-index] .dash-widget {padding:0}
+/* .page[data-name=home-index] .demo-swiper .swiper-slide {display:block} */
+.page[data-name=home-index] .dash-widget img {display:block;width:100%;}
+.page[data-name=home-index] .swiper-wrapper {height:auto;}
+
+/* 문의하기 탭 */
+.page[data-name=home-index] #tab4 .block-title {font-size:16px;line-height:20px;font-weight:bold;color:#444;}
+.page[data-name=home-index] #tab4 .block {margin:25px 0}
+
+/* app info */
+.info-box {
+    width: 100%;
+    background-color:#ddd;
+    padding:15px;
+}
+.info-box p{
+  font-size:0.6em;
+}
+.bottom-fix{
+  position: fixed;
+  bottom: 0;
+}
+.bottom-unfix{
+  position: fixed;
+  bottom: 44px;
+}

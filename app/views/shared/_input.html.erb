@@ -1,0 +1,16 @@
+<li class="item-content item-input item-input-with-value">
+  <div class="item-inner">
+    <div class="item-title item-label"><%= f.label field_name %></div>
+    <div class="item-input-wrap">
+      <% if field_name == :email %>
+        <%= f.email_field field_name, autofocus: true, autocomplete: "email" %>
+      <% elsif [:password, :password_confirmation].include? field_name %>
+        <%= f.password_field field_name, autocomplete: "off" %>
+      <% else %>
+        <%= f.text_field field_name, autocomplete: "off" %>
+      <% end %>
+
+      <span class="input-clear-button"></span>
+    </div>
+  </div>
+</li>

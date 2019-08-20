@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  color: 1
+  main_category: 1
+  sub_category: 1
+
+two:
+  color: 1
+  main_category: 1
+  sub_category: 1

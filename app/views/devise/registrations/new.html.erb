@@ -1,0 +1,17 @@
+<%= navback "회원가입" %>
+<div class="page-content">
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="block list">
+      <%= devise_error_messages! %>
+      <ul>
+        <%= input :email, f %>
+        <%= input :password, f %>
+        <%= input :password_confirmation, f %>
+        <%= submit "회원가입", f %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>

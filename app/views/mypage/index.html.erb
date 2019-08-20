@@ -1,0 +1,53 @@
+<div class="navbar no-shadow">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="#" class="link back">
+        <i class="icon icon-back"></i>
+        <span class="ios-only">Back</span>
+      </a>
+    </div>
+    <div class="title">마이페이지</div>
+  </div>
+</div>
+<div class="page-content">
+  <div class="block">
+    <div class="block-title">내 패션 모아보기</div>
+    <div class="list media-list">
+      <ul>
+        <% @my_posts.each do |post| %>
+          <li>
+            <a href="#" class="item-link item-content">
+              <div class="item-media">
+                <% if post.image.present? %>
+                  <img src="<%= post.image %>" width="80"/>
+                <% else %>
+                  <img src="https://placehold.it/80x80" width="80"/>
+                <% end %>
+              </div>
+              <div class="item-inner">
+                <div class="item-title-row">
+                  <div class="item-title"><%= post.posted_at.strftime("%Y, %m월 %d일") %></div>
+                </div>
+                <div class="item-subtitle"><%= post.title %></div>
+                <div class="item-text"><%= post.body %></div>
+              </div>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="block">
+    <div class="block-title">카테고리 정리</div>
+    <div class="list links-list">
+      <ul>
+        <li><a href="<%= category_path %>">Category</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="block">
+    <div class="block-title">
+      <%= link_to '추천', recommend_result_path %>
+    </div>
+  </div>
+</div>

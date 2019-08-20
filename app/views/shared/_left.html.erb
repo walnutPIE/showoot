@@ -1,0 +1,12 @@
+<div class="block-title">왼쪽 메뉴</div>
+<div class="list links-list">
+  <ul>
+    <li>
+      <% if current_user %>
+        <%= link_to "로그아웃", destroy_user_session_path, method: :delete, class: "panel-close" %>
+      <% else %>
+        <%= link_to "로그인", new_user_session_path, class: "panel-close" %>
+      <% end %>
+    </li>
+  </ul>
+</div>

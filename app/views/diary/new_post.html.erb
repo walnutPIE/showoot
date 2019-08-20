@@ -1,0 +1,142 @@
+<div class="navbar no-shadow">
+  <div class="navbar-inner sliding">
+    <div class="left">
+      <a href="#" class="link back">
+        <i class="icon icon-back"></i>
+        <span class="ios-only">Back</span>
+      </a>
+    </div>
+    <div class="title">새 글 작성</div>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="block">
+    <div class="block-title"><%= @picked_date %> 다이어리 작성</div>
+    <div class="list inline-labels no-hairlines-md">
+      <%= form_for @post, url: '/diary/create_post' do |f| %>
+        <%= f.hidden_field :user_id,value: current_user.id %>
+        <%= f.hidden_field :posted_at,value: @picked_date %>
+
+        <!-- 옷 정보 -->
+        <%= hidden_field_tag :clothes_info, value: "" %>
+
+        <% if @post.errors.any? %>
+          <div id="errorExplanation">
+            <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+            <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <ul>
+          <li class="item-content item-input">
+            <div class="row" style="width:100%;">
+              <div class="item-inner col">
+                <div class="item-title item-label" style="font-size:0.7em;color:grey;">공개범위</div>
+                <div class="item-input-wrap">
+                  <%= f.select(:open_range, options_for_select([['전체공개','전체공개'], ['나만보기','나만보기']]), value:'전체공개' ) %>
+                </div>
+              </div>
+              <div class="item-inner col">
+                <div class="item-title item-label" style="font-size:0.7em;color:grey;">이벤트</div>
+                <div class="item-input-wrap">
+                  <%= select_tag(:event, options_for_select([['비즈니스','비즈니스'], ['데이트','데이트'], ['친구약속','친구약속'], ['데일리','데일리']]), value:'비즈니스' ) %>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-input-wrap">
+                <img id="image_upload" src="#" />
+                <!-- <input type='file' onchange="readURL(this);" /> -->
+                <%= f.file_field :image %>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-input-wrap">
+                <%= f.text_field :title, placeholder:"제목" %>
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-input-wrap">
+                <%= f.text_area :body, placeholder:"내용" %>
+                <span class="input-clear-button"></span>
+              </div>
+            </div>
+          </li>
+          <div class="list links-list" style="margin:0 auto;" >
+            <ul style="padding-left:0px;">
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-input-wrap">
+                    <a class="link popup-open" style="padding-left:0px;" href="#" data-popup=".popup-about">Category</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="popup popup-about">
+            <div class="block">
+              <a class="button button-fill color-blue link popup-close" id="category_select_btn" href="#">선택완료</a>
+              <div class="block-title">Category</div>
+              <div class="list accordion-list">
+                <ul>
+                  <% Cloth.get_clothes_info.each do |key, value| %>
+                    <li class="accordion-item">
+                      <a href="#" class="item-content item-link">
+                        <div class="item-inner">
+                          <div class="item-title"><%= key %></div>
+                        </div>
+                      </a>
+                      <div class="accordion-item-content">
+                        <div class="block">
+                          <div class="list">
+                            <ul>
+                              <% value.each do |cloth_name| %>
+                                <li>
+                                  <label class="item-radio item-content">
+                                    <input type="radio" name="demo-radio" value="<%= key %>_<%= cloth_name %>" /> <!-- checked="checked"/> -->
+                                    <i class="icon icon-radio"></i>
+                                    <div class="item-inner">
+                                      <div class="item-title"><%= cloth_name %></div>
+                                    </div>
+                                  </label>
+                                </li>
+                              <% end %>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <li class="item-content item-input">
+            <div class="item-inner">
+              <div class="item-title item-label">Preference</div>
+              <div class="item-input-wrap">
+                <div class="range-slider range-slider-init" data-label="true">
+                  <input type="range" name="preference" value="5" min="1" max="5" step="1">
+                </div>
+              </div>
+            </div>
+          </li>
+          <div class="block">
+            <%= f.submit class:"button button-fill color-blue" %>
+          </div>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
